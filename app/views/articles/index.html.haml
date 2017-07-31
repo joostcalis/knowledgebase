@@ -1,0 +1,10 @@
+.index
+  - @articles.each do |article|
+    %p
+      = link_to article.title, article_path(article)
+    %p
+      = article.content
+    %ul
+      - article.categories.each do |category|
+        %li
+          = category.title

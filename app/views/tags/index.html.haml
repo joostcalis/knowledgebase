@@ -1,0 +1,6 @@
+.container
+  .row
+    .col-md-12
+      - @tags.each do |tag|
+        .tag-holder
+          = link_to tag.title, edit_tag_path(tag)

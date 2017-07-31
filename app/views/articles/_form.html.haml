@@ -1,0 +1,14 @@
+.container
+  .row
+    .col-md-6.offset-md-3
+      = simple_form_for @article do |f|
+        .form-group
+          = f.input :title, input_html: {class: 'form-control'}
+        .form-group
+          = f.input :content, input_html: {class: 'form-control'}
+        .form-group
+          = f.association :tags, collection: Tag.all, input_html: {class: 'form-control'}
+        .form-group
+          = f.association :categories, collection: Category.all, input_html: {class: 'form-control'}
+        .form-group
+          = f.button :submit, input_html: {class: 'form-control'}
