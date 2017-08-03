@@ -25,7 +25,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if @article.update(permitted_params)
+    access_level = {access_level: params[:article][:access_level].to_i}
+    if @article.update(permitted_params.merge(access_level))
       redirect_to article_path(@article)
     else
       render :edit
