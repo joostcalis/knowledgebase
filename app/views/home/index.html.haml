@@ -2,7 +2,7 @@
   .row
     .col-md-12
       %h2.text-center.my-4
-        = 'Welcome to the FUGA Knowledgebase'
+        = 'Welcome to the FUGA Knowledge Base'
       - @categories.each do |category|
         %p
           = link_to category.title, category_path(category)
