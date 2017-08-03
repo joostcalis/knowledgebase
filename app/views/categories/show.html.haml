@@ -3,3 +3,7 @@
     .col-md-12
       %p
         = @category.title
+      %ul
+        - @category.articles.each do |article|
+          %li
+            = link_to article.title, article_path(article)
